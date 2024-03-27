@@ -1,9 +1,3 @@
-/*
-* Template Name: Space
-* Template Author: Untree.co
-* Author URI: https://untree.co/
-* License: https://creativecommons.org/licenses/by/3.0/
-*/
 body {
   font-family: "PT Mono", monospace;
   line-height: 1.6;
@@ -88,7 +82,7 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
       border-color: #1793ff;
       background: #1793ff; }
   .btn.btn-black {
-    background: forestgreen;
+    background: rgb(156, 185, 156);
     color: #ffffff; }
     .btn.btn-black:hover {
       border-color: #000000;
@@ -207,9 +201,9 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
     color: #ffffff; }
 
 .site-nav {
-  position: absolute;
+  position: fixed;
   width: 100%;
-  z-index: 7; }
+  z-index: 90; }
   .site-nav a {
     position: relative;
     z-index: 9;
@@ -355,7 +349,12 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
     color: #0389ff; }
   .site-nav.dark .site-navigation .site-menu > li.has-children:hover > a, .site-nav.dark .site-navigation .site-menu > li.has-children:focus > a, .site-nav.dark .site-navigation .site-menu > li.has-children:active > a {
     color: #000000; }
-
+    .scrolled {
+      background-color: rgb(156, 185, 156) !important;
+      box-shadow: 0 4px 2px -2px rgb(119, 126, 119);
+    border-radius: 7px;
+    }
+    
 .site-mobile-menu-close {
   display: block;
   position: relative;
@@ -838,7 +837,7 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
   .testimonial-v1 .caption {
     font-size: 13px; }
   .testimonial-v1:hover {
-    border-color:forestgreen; }
+    border-color:rgb(156, 185, 156); }
 
 .owl-3-slider .owl-nav, .single-slider .owl-nav {
   position: absolute;
@@ -1070,7 +1069,7 @@ figure.dotted-bg {
     border-radius: 50%;
     width: 35px;
     height: 35px;
-    background: forestgreen;
+    background: rgb(156, 185, 156);
     bottom: -0px;
     right: -0px;
     z-index: -1; }
@@ -1549,7 +1548,7 @@ figure.dotted-bg {
       border-radius: 50%;
       background: rgba(0, 0, 0, 0.2); }
     .owl-single .owl-dots .owl-dot.active span, .owl-carousel .owl-dots .owl-dot.active span {
-      background: forestgreen; }
+      background: rgb(156, 185, 156); }
 
 .owl-single.no-dots .owl-dots, .owl-carousel.no-dots .owl-dots {
   display: none; }
@@ -1633,9 +1632,9 @@ figure.dotted-bg {
     position: relative;
     display: inline-block; }
     .site-footer a:hover {
-      color:forestgreen; }
+      color:rgb(156, 185, 156); }
       .site-footer a:hover:before {
-        background:forestgreen; }
+        background:rgb(156, 185, 156); }
   .site-footer .btn:before {
     display: none; }
   .site-footer .widget {
@@ -1655,7 +1654,7 @@ figure.dotted-bg {
       width: 30px;
       height: 30px;
       position: relative;
-      background: forestgreen;
+      background: rgb(156, 185, 156);
       border-radius: 50%;
       color: #ffffff; }
       .site-footer .social li a:before {

@@ -598,8 +598,18 @@ var owlSingleSlider = function () {
 
 })
 
-
-
+window.onscroll = function() {
+    var nav = document.querySelector('.site-nav'); // Navigasyon çubuğunu seçin
+    var logo = document.querySelector('.logo'); // Logo elementini seçin
+    
+    if (window.pageYOffset > 0) {
+        nav.classList.add('scrolled'); // Kullanıcı sayfayı kaydırdıysa, 'scrolled' sınıfını ekleyin
+        logo.src = 'images/logo-white.png'; // Aynı zamanda, logo kaynağını beyaz logoya değiştirin
+    } else {
+        nav.classList.remove('scrolled'); // Kullanıcı sayfanın en üstünde ise, 'scrolled' sınıfını kaldırın
+        logo.src = 'images/logo-dark.png'; // Ve logo kaynağını koyu renkli logoya değiştirin
+    }
+};
 
 
 

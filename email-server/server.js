@@ -21,7 +21,7 @@ const transporter = nodemailer.createTransport({
         pass: process.env.EMAIL_PASS
     },
     tls: {
-        rejectUnauthorized: false // Güvenlik riskleri hakkında bilinçli olun
+        rejectUnauthorized: false
     }
 });
 
@@ -29,8 +29,8 @@ const transporter = nodemailer.createTransport({
 app.post('/send-email', (req, res) => {
     const { firstname, lastname, email, message } = req.body;
     const mailOptions = {
-        from: email,
-        to: 'halilcankorkmaz01@gmail.com',
+        from: process.env.EMAIL_USER,
+        to: 'cengizhankaraman2880@gmail.com',
         subject: `New message from ${firstname} ${lastname}`,
         text: `You have received a new message from ${firstname} ${lastname}
         \n\nE-Mail Address: ${email}

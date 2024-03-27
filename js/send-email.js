@@ -17,9 +17,9 @@ document.getElementById('contact-form').addEventListener('submit', function(even
     })
     .then(response => {
         if (!response.ok) {
-            throw new Error('Network response was not ok'); // Ağ hatası için
+            throw new Error('Network response was not ok');
         }
-        return response.json(); // Bu satır hata fırlatabilir eğer yanıt JSON değilse
+        return response.json();
     })
     .then(data => {
         console.log('Success:', data);
