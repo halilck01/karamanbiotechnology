@@ -8,7 +8,9 @@ document.getElementById('contact-form').addEventListener('submit', function(even
         message: document.getElementById('message').value
     };
 
-    fetch('http://localhost:3002/send-email', {        
+    fetch('https://www.karamanbiotech.com/send-email', {   
+        // mode: 'cors',
+        // credentials: 'include',     
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',

@@ -1,16 +1,27 @@
-require('dotenv').config();
 const express = require('express');
+const cors = require('cors');
+const app = express();
 const nodemailer = require('nodemailer');
 const bodyParser = require('body-parser');
+require('dotenv').config();
 
-const app = express();
-const cors = require('cors');
-app.use(cors());
 const port = process.env.PORT || 3002;
 
 
+app.use(cors({
+    origin: ['https://karamanbiotech.com', 'https://www.karamanbiotech.com'],
+    methods: ['GET', 'POST'], // İzin verilen HTTP metodları
+    allowedHeaders: ['Content-Type'], // İzin verilen başlıklar
+    credentials: true // Kimlik bilgilerini paylaşma izni
+}));
+
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+
+app.use((req, res, next) => {
+    console.log(`${new Date().toISOString()} - ${req.method} request to ${req.url}`);
+    next();
+});
 
 const transporter = nodemailer.createTransport({
     service: 'gmail',
@@ -27,6 +38,7 @@ const transporter = nodemailer.createTransport({
 
 
 app.post('/send-email', (req, res) => {
+    console.log('Send-email route çağrıldı');
     const { firstname, lastname, email, message } = req.body;
     const mailOptions = {
         from: process.env.EMAIL_USER,
